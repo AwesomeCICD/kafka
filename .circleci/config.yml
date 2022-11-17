@@ -1,5 +1,8 @@
 version: 2.1
 
+
+
+
 workflows:
   default:
     jobs:
@@ -19,3 +22,6 @@ executors:
   base:
     docker:
       - image: cimg/openjdk:17.0
+  resource_class: 2xlarge+
+
+# VS Code Extension Version: 1.1.1
