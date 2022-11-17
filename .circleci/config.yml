@@ -9,6 +9,7 @@ jobs:
   test:
     executor: base
     steps:
+      - checkout
       - run:
           name: Maven Testing
           command: ./retry_zinc ./gradlew -PscalaVersion=2.13 clean compileJava compileScala compileTestJava compileTestScala spotlessScalaCheck checkstyleMain checkstyleTest spotbugsMain rat --profile --no-daemon --continue -PxmlSpotBugsReport=true
