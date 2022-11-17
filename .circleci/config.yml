@@ -16,8 +16,10 @@ jobs:
       - run:
           name: Maven Testing
           command: ./retry_zinc ./gradlew -PscalaVersion=2.13 clean compileJava compileScala compileTestJava compileTestScala spotlessScalaCheck checkstyleMain checkstyleTest spotbugsMain rat --profile --no-daemon --continue -PxmlSpotBugsReport=true
-          
-    
+      - store_artifacts:
+          path: /home/circleci/project/build/reports
+      - store_test_results:
+          path: /home/circleci/project/build/reports/tests
 executors:
   base:
     docker:
