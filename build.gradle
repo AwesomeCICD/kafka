@@ -205,7 +205,8 @@ if (file('.git').exists()) {
         'streams/streams-scala/logs/*',
         'licenses/*',
         '**/generated/**',
-        'clients/src/test/resources/serializedData/*'
+        'clients/src/test/resources/serializedData/*',
+        '.circleci/*'
     ])
   }
 } else {
