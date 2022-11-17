@@ -1,0 +1,20 @@
+version: 2.1
+
+workflows:
+  default:
+    jobs:
+      - test
+      
+jobs:
+  test:
+    executor: base
+    steps:
+      - run:
+          name: Maven Testing
+          command: ./retry_zinc ./gradlew -PscalaVersion=2.13 clean compileJava compileScala compileTestJava compileTestScala spotlessScalaCheck checkstyleMain checkstyleTest spotbugsMain rat --profile --no-daemon --continue -PxmlSpotBugsReport=true
+          
+    
+executors:
+  base:
+    docker:
+      - image: cimg/openjdk:17
