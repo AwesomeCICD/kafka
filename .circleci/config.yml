@@ -17,4 +17,4 @@ jobs:
 executors:
   base:
     docker:
-      - image: cimg/openjdk:17
+      - image: cimg/openjdk:17.0
