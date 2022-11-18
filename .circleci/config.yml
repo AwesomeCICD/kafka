@@ -27,11 +27,7 @@ jobs:
       - store_artifacts:
           path: /home/circleci/project/build/reports
       - store_test_results:
-          path: /home/circleci/project/core/build/reports/tests/integrationTest
-      - store_test_results:
-          path: /home/circleci/project/core/build/reports/tests/unitTest
-      - store_test_results:
-          path: /home/circleci/project/core/build/reports/tests/
+          path: /home/circleci/project/build/test-results/
 executors:
   base:
     docker:
