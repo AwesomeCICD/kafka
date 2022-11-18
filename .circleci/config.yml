@@ -23,7 +23,7 @@ jobs:
             - run:
                 name: Gradle Unit & IT Tests
                 command: |
-                  ./gradlew -PscalaVersion=2.12 unitTest integrationTest --profile --no-daemon --continue -PtestLoggingEvents=started,passed,skipped,failed -PignoreFailures=true -PmaxParallelForks=2 -PmaxTestRetries=1 -PmaxTestRetryFailures=10 || echo "Tests failed, but we want cache."
+                  ./gradlew -PscalaVersion=2.12 unitTest integrationTest --profile --no-daemon --continue -PtestLoggingEvents=started,passed,skipped,failed -PignoreFailures=true -PmaxParallelForks=4 -PmaxTestRetries=1 -PmaxTestRetryFailures=10 || echo "Tests failed, but we want cache."
       - store_artifacts:
           path: /home/circleci/project/build/reports
       - store_test_results:
