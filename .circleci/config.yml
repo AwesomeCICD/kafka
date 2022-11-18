@@ -26,7 +26,6 @@ jobs:
                   ./gradlew -PscalaVersion=2.12 unitTest integrationTest --profile --no-daemon --continue -PtestLoggingEvents=started,passed,skipped,failed -PignoreFailures=true -PmaxParallelForks=2 -PmaxTestRetries=1 -PmaxTestRetryFailures=10 || echo "Tests failed, but we want cache."
       - store_artifacts:
           path: /home/circleci/project/build/reports
-      - run: 
       - store_test_results:
           path: /home/circleci/project/core/build/reports/tests/integrationTest
       - store_test_results:
